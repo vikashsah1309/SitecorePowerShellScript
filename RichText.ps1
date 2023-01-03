@@ -1,6 +1,8 @@
-﻿Write-Host "Search started $(Get-Date -format 'u')"
+﻿# Find the Items in Sitecore, where has "Rich Text" field and has link with other items.
 
-$startPath = "master:/sitecore/content/ParentItem"
+Write-Host "Search started $(Get-Date -format 'u')"
+
+$startPath = "master:/sitecore/content/VikashEnterprise"
 $itemsToProcess = Get-ChildItem $startPath  -Recurse
 $itemsToProcess.Count
 
@@ -8,8 +10,8 @@ $list = [System.Collections.ArrayList]@()
 if($itemsToProcess -ne $null) {
     $itemsToProcess | ForEach-Object { 
         foreach($field in $_.Fields) {
-            if($field.Type -eq "Rich Text") {
-                  if($field -match "~/link.aspx") 
+            if($field.Type -eq "Rich Text") {   #Check filed type is "Rich Text" or not
+                  if($field -match "~/link.aspx")  #Check Rich Text Filed is used in datasource or not. 
                   {
                      $info = [PSCustomObject]@{
 						"ID"=$_.ID
