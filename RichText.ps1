@@ -1,6 +1,6 @@
 ﻿Write-Host "Search started $(Get-Date -format 'u')"
 
-$startPath = "master:/sitecore/content/Southeastern"
+$startPath = "master:/sitecore/content/ParentItem"
 $itemsToProcess = Get-ChildItem $startPath  -Recurse
 $itemsToProcess.Count
 
