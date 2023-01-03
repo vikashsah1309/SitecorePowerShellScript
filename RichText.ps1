@@ -11,7 +11,7 @@ if($itemsToProcess -ne $null) {
     $itemsToProcess | ForEach-Object { 
         foreach($field in $_.Fields) {
             if($field.Type -eq "Rich Text") {   #Check filed type is "Rich Text" or not
-                  if($field -match "~/link.aspx")  #Check Rich Text Filed is used in datasource or not. 
+                  if($field -match "~/link.aspx")  #Check Rich Text field is used in datasource or not. 
                   {
                      $info = [PSCustomObject]@{
 						"ID"=$_.ID
