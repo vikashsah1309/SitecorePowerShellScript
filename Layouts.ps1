@@ -13,7 +13,6 @@ $layoutsRootItem = Get-Item -Path "$($database):{75CC5CE4-8979-4008-9D3C-806477D
 $websiteRootItem = Get-Item -Path "$($database):{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"       #/sitecore/content
 $VikashEnterpriseItem = Get-Item -Path "$($database):{A930CE4D-C15F-4EB6-A97D-668CE249ECA4}"  #/sitecore/content/VikashEnterprise
  
- 
 $items = $layoutsRootItem.Axes.GetDescendants() | Initialize-Item | IsLayout
  
 $reportItems = @()
